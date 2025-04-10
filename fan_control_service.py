@@ -18,7 +18,7 @@ else:
         format="%(asctime)s - %(levelname)s - %(message)s",
         handlers=[
             JournalHandler(
-                SYSLOG_IDENTIFIER="pwm-fan-cm3588"
+                SYSLOG_IDENTIFIER="fan_control"
             ),  # Send logs to systemd journal
             #       logging.FileHandler('/var/log/fan_controller.log'),  # Optional: Log to a file as well
         ],
