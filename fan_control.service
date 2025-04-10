@@ -1,8 +1,8 @@
 [Unit]
-Description=Fan Controller Service
+Description=PWM Fan Controller Service
 
 [Service]
-ExecStart=/usr/bin/python3 /usr/local/bin/fan_control.py
+ExecStart=/usr/bin/python3 /usr/local/bin/fan_control_service.py
 Restart=always
 Environment=PYTHONUNBUFFERED=1 DEBUG=false
 
