@@ -13,14 +13,14 @@ Usage of this software is purely at your own risk. I am just sharing what I deve
 2. Changes fan speed as per the temperature (configurable).
 
 ## Test before you install
-1. Run `./fan_control_cli.py` and it should run without any errors. It should show some messages like following (example taken from my machine)
+1. Run `./text.py` and it should run without any errors. It should show some messages like following (example taken from my machine)
    ```
    2025-04-10 23:19:59,742 - INFO - Fan device: /sys/class/thermal/cooling_device4
    2025-04-10 23:19:59,743 - INFO - Maximum state allowed: 5
    2025-04-10 23:19:59,743 - INFO - Current state is set to: 1
    ```
 2. Try setting some speed for the fan where 0 mean off, and any value above 0 upto "Maximum state" sets different speeds.
-   For example `./fan_control_cli.py 5` will set it to maximum speed on my machine.
+   For example `./test.py 5` will set it to maximum speed on my machine.
 3. If all goes well, you can go ahead to install the background service as per following instructions.
 
 ## Steps to get it running as background service.
@@ -31,7 +31,7 @@ Usage of this software is purely at your own risk. I am just sharing what I deve
 5. Run the command `systemctl daemon-reload`
 6. Enable the service by running `systemctl enable --now fan_control.service`
 
-Now you can see the logs by running `journalctl -u fan_control`
+Now you can see the logs by running `journalctl -u pwm-fan-cm3588`
 You can also configure the various parameters in the scriot itself by editing /usr/local/bin/fan_control_service.py (like temperature ranges which controls various fan speeds).
 
 ## Steps to uninstall.
