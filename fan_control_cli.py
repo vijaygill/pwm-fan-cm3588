@@ -26,6 +26,8 @@ def main():
         max_state = int(open(max_state_file).read().strip())
         cur_state = int(open(cur_state_file).read().strip())
 
+        logger.info(f"Maximum state allowed: {max_state}")
+
         desired_state = int(args.desired_state) if args.desired_state else None
         if desired_state:
             if desired_state > max_state:
